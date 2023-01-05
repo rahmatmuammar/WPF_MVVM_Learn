@@ -1,0 +1,153 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--#region Colors-->
+    <SolidColorBrush x:Key="ColorWhite" Color="White"/>
+    <SolidColorBrush x:Key="ColorOrange" Color="#F06A25"/>
+    <SolidColorBrush x:Key="ColorBlue" Color="#252271"/>
+    <SolidColorBrush x:Key="ColorGray" Color="#4D4D4D"/>
+    <SolidColorBrush x:Key="ColorRed" Color="Red"/>
+    <SolidColorBrush x:Key="ColorBlack" Color="Black"/>
+    <SolidColorBrush x:Key="ColorGreen" Color="Green"/>
+    <!--#endregion-->
+    <!--#region Buttons-->
+    <Style x:Key="HorizontalButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="ButtonBorder" Background="DarkGray">
+                        <TextBlock FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock.LayoutTransform>
+                                <RotateTransform Angle="90"/>
+                            </TextBlock.LayoutTransform>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource ColorOrange}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BlueShortButton" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Margin" Value="1"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="buttonBorder" BorderThickness="0" CornerRadius="12" Width="160.25" Height="72" Background="{StaticResource ColorBlue}">
+                        <TextBlock 
+			                    VerticalAlignment="Center"
+			                    HorizontalAlignment="Center"
+                                TextAlignment="Center"
+			                    FontSize="30"
+			                    TextWrapping="Wrap"
+			                    Foreground="{StaticResource ColorWhite}">     
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource ColorOrange}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource ColorGray}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="RedShortButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="buttonBorder" BorderThickness="0" CornerRadius="12" Width="160.25" Height="72" Background="Red">
+                        <TextBlock 
+			                    VerticalAlignment="Center"
+			                    HorizontalAlignment="Center"
+                                TextAlignment="Center"
+			                    FontSize="30"
+			                    TextWrapping="Wrap"
+			                    Foreground="{StaticResource ColorWhite}">     
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource ColorOrange}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource ColorGray}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region TextBlock-->
+    <Style x:Key="PageTitle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="TextBlockDeg90" TargetType="{x:Type TextBlock}">
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <RotateTransform Angle="90"/>
+            </Setter.Value>
+        </Setter>
+    </Style>    
+    <!--#endregion-->
+    <!--#region Grid-->
+    <Style x:Key="BodyGrid" TargetType="{x:Type ItemsControl}">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <Grid Background="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region RadioButton -->
+    <Style x:Key="ChoiceRadioButton" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border x:Name="radioButtonBorder" Margin="5" BorderBrush="{StaticResource ColorBlack}" BorderThickness="3" CornerRadius="12" Width="200" Height="100" Background="{StaticResource ColorBlue}">
+                        <TextBlock 
+			                    VerticalAlignment="Center"
+			                    HorizontalAlignment="Center"
+                                TextAlignment="Center"
+			                    FontSize="35"
+			                    TextWrapping="Wrap"
+			                    Foreground="{StaticResource ColorWhite}">     
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource ColorGray}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource ColorBlack}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+</ResourceDictionary>

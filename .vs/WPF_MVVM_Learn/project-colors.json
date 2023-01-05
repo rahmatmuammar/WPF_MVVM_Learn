@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1c59eed3-f51e-4cf2-a802-e9a16db06873": {
+      "ProjectGuid": "1c59eed3-f51e-4cf2-a802-e9a16db06873",
+      "DisplayName": "WPF_MVVM_Learn",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

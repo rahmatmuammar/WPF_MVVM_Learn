@@ -1,0 +1,40 @@
+﻿<Window x:Class="WPF_MVVM_Learn.Assets.Popups.Views.PopupMultiChoice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_MVVM_Learn.Assets.Popups.Views"
+        mc:Ignorable="d"
+        
+        TextOptions.TextFormattingMode="Ideal" TextOptions.TextRenderingMode="Aliased" UseLayoutRounding="True"
+        
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent">
+    <Border Background="{StaticResource ColorWhite}" Width="400" Height="400" CornerRadius="20">
+        <Grid Width="360">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="TB_Title" TextAlignment="Center" VerticalAlignment="Center" MaxHeight="250" TextWrapping="Wrap" FontSize="40"/>
+                    <Border Background="{StaticResource ColorBlue}" Height="5" BorderThickness="0"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <TextBlock x:Name="TB_Message" TextAlignment="Center" VerticalAlignment="Center" MaxHeight="250" TextWrapping="Wrap" FontSize="25"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Style="{StaticResource RedShortButton}" x:Name="BTN_No" Click="Button_No_Click"/>
+                    <Border Width="20"/>
+                    <Button Style="{StaticResource BlueShortButton}" x:Name="BTN_Yes" Click="Button_Yes_Click"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
